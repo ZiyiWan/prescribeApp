@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 const { Header, Content, Footer } = Layout;
 const { Title } = Typography;
 
-const App: React.FC = () => {
+const PanelPage = () => {
   const router = useRouter();
   return (
     <Layout>
@@ -53,8 +53,8 @@ const App: React.FC = () => {
                 }}
                 shape="round"
                 icon={<TeamOutlined style={{ fontSize: "40px" }} />}
-                onClick={()=>{
-                  router.push("/patientList")
+                onClick={() => {
+                  router.push("/patientList");
                 }}
               >
                 <span style={{ fontSize: "28px" }}>My Patients</span>
@@ -70,8 +70,8 @@ const App: React.FC = () => {
                 }}
                 shape="round"
                 icon={<SnippetsOutlined style={{ fontSize: "40px" }} />}
-                onClick={()=>{
-                  router.push("/prescribePage")
+                onClick={() => {
+                  router.push("/prescribePage");
                 }}
               >
                 <span style={{ fontSize: "28px" }}>Prescribe</span>
@@ -87,8 +87,8 @@ const App: React.FC = () => {
                 }}
                 shape="round"
                 icon={<UserOutlined style={{ fontSize: "40px" }} />}
-                onClick={()=>{
-                  router.push("/myProfile")
+                onClick={() => {
+                  router.push("/myProfile");
                 }}
               >
                 <span style={{ fontSize: "28px" }}>My profile</span>
@@ -102,10 +102,6 @@ const App: React.FC = () => {
       </Footer>
     </Layout>
   );
-};
-
-export const PanelPage = () => {
-  return <App />;
 };
 
 export default PanelPage;

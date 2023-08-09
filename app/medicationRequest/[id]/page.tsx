@@ -4,6 +4,7 @@ import React from "react";
 import { Button, Descriptions, Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { FormOutlined } from "@ant-design/icons";
+import { useRouter } from "next/navigation";
 
 const columns: ColumnsType<any> = [
   {
@@ -45,6 +46,7 @@ const data = [
 ];
 
 const MedicationRequestPage = () => {
+  const router = useRouter();
   return (
     <PageLayout>
       <Button
@@ -52,6 +54,9 @@ const MedicationRequestPage = () => {
         size="large"
         style={{ backgroundColor: "#60DF46", marginTop: "10px" }}
         icon={<FormOutlined />}
+        onClick={() => {
+          router.push("/prescribePage");
+        }}
       >
         Prescribe
       </Button>

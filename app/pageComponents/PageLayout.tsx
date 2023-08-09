@@ -28,7 +28,7 @@ const PageLayout = ({ children }: Props) => {
         className="site-layout"
         style={{
           padding: "0 50px",
-          height: "90vh",
+          height: "100%",
         }}
       >
         {children}
