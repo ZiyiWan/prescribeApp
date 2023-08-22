@@ -97,7 +97,7 @@ const PrescribePage = () => {
   const handleSelect = (value: any) => {
     console.log(value);
     // Redirect to the new prescribing page, with the selected value as a query parameter
-    window.location.href = `/prescribing?medicine=${value}`;
+    window.location.href = `/medicationCompare?medicine=${value}`;
   };
 
   return (

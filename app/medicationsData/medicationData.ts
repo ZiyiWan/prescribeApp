@@ -7,6 +7,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.073,
     carbon_footprint_rating: 2,
+    cost_per_unit_dose: 1.13,
   },
   {
     generic_name: "Aclidinium",
@@ -16,6 +17,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.009,
     carbon_footprint_rating: 1,
+    cost_per_unit_dose: 2.75,
   },
   {
     generic_name: "Salbutamol",
@@ -25,6 +27,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.0486,
     carbon_footprint_rating: 2,
+    cost_per_unit_dose: 3.22,
   },
   {
     generic_name: "Salbutamol",
@@ -34,6 +37,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.0486,
     carbon_footprint_rating: 2,
+    cost_per_unit_dose: 1.0,
   },
   {
     generic_name: "Salbutamol",
@@ -43,6 +47,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.06,
     carbon_footprint_rating: 2,
+    cost_per_unit_dose: 2.0,
   },
   {
     generic_name: "Salbutamol",
@@ -52,6 +57,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.06,
     carbon_footprint_rating: 2,
+    cost_per_unit_dose: 0.75,
   },
   {
     generic_name: "Salbutamol",
@@ -61,6 +67,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.01,
     carbon_footprint_rating: 1,
+    cost_per_unit_dose: 0.99,
   },
   {
     generic_name: "Salbutamol",
@@ -70,6 +77,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.141,
     carbon_footprint_rating: 3,
+    cost_per_unit_dose: 2.63,
   },
   {
     generic_name: "Formoterol",
@@ -79,6 +87,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.13,
     carbon_footprint_rating: 2,
+    cost_per_unit_dose: 1.98,
   },
   {
     generic_name: "Formoterol",
@@ -88,6 +97,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: -0.005,
     carbon_footprint_rating: 0,
+    cost_per_unit_dose: 0.88,
   },
   {
     generic_name: "Formoterol",
@@ -97,6 +107,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.019,
     carbon_footprint_rating: 1,
+    cost_per_unit_dose: 0.76,
   },
   {
     generic_name: "Indacaterol",
@@ -106,6 +117,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.019,
     carbon_footprint_rating: 1,
+    cost_per_unit_dose: 0.03,
   },
   {
     generic_name: "Salmeterol",
@@ -115,6 +127,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.13,
     carbon_footprint_rating: 2,
+    cost_per_unit_dose: 2.01,
   },
   {
     generic_name: "Salmeterol",
@@ -124,6 +137,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.012,
     carbon_footprint_rating: 1,
+    cost_per_unit_dose: 2.45,
   },
   {
     generic_name: "Beclometasone",
@@ -133,6 +147,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: -0.003,
     carbon_footprint_rating: 0,
+    cost_per_unit_dose: 0.98,
   },
   {
     generic_name: "Beclometasone",
@@ -142,6 +157,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.087,
     carbon_footprint_rating: 2,
+    cost_per_unit_dose: 1.45,
   },
   {
     generic_name: "Beclometasone",
@@ -151,6 +167,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.102,
     carbon_footprint_rating: 2,
+    cost_per_unit_dose: 1.24,
   },
   {
     generic_name: "Beclometasone",
@@ -160,6 +177,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.102,
     carbon_footprint_rating: 2,
+    cost_per_unit_dose: 1.32,
   },
   {
     generic_name: "Beclometasone",
@@ -169,6 +187,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.102,
     carbon_footprint_rating: 2,
+    cost_per_unit_dose: 1.65,
   },
   {
     generic_name: "Formoterol/aclidinium",
@@ -178,6 +197,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.009,
     carbon_footprint_rating: 1,
+    cost_per_unit_dose: 2.63,
   },
   {
     generic_name: "Formoterol/beclometasone/glycopyrronium",
@@ -187,6 +207,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.118,
     carbon_footprint_rating: 2,
+    cost_per_unit_dose: 1.98,
   },
   {
     generic_name: "Formoterol/beclometasone/glycopyrronium",
@@ -196,6 +217,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.007,
     carbon_footprint_rating: 1,
+    cost_per_unit_dose: 1.13,
   },
   {
     generic_name: "Salmeterol/fluticasone",
@@ -205,6 +227,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.161,
     carbon_footprint_rating: 2,
+    cost_per_unit_dose: 2.75,
   },
   {
     generic_name: "Salmeterol/fluticasone",
@@ -214,6 +237,7 @@ export const medications = [
     unit_dose: "1 puff",
     carbon_emission_per_unit_dose: 0.01,
     carbon_footprint_rating: 1,
+    cost_per_unit_dose: 3.22,
   },
   {
     generic_name: "Amoxicillin",
@@ -223,6 +247,7 @@ export const medications = [
     unit_dose: "50 mg",
     carbon_emission_per_unit_dose: "NA",
     carbon_footprint_rating: 2,
+    cost_per_unit_dose: 1.0,
   },
   {
     generic_name: "Doxycycline",
@@ -232,6 +257,7 @@ export const medications = [
     unit_dose: "100 mg",
     carbon_emission_per_unit_dose: "NA",
     carbon_footprint_rating: 3,
+    cost_per_unit_dose: 2.0,
   },
   {
     generic_name: "cephalexin",
@@ -241,6 +267,7 @@ export const medications = [
     unit_dose: "50 mg",
     carbon_emission_per_unit_dose: "NA",
     carbon_footprint_rating: 1,
+    cost_per_unit_dose: 0.75,
   },
   {
     generic_name: "ciprofloxacin",
@@ -250,5 +277,6 @@ export const medications = [
     unit_dose: "50 mg",
     carbon_emission_per_unit_dose: "NA",
     carbon_footprint_rating: 1,
+    cost_per_unit_dose: 0.99,
   },
 ];
