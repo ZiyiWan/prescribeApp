@@ -1,21 +1,21 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Table, Typography, Space, Button } from "antd";
-import { medications } from "../medicationsData/medicationData";
 import { useSearchParams } from "next/navigation";
 import PageLayout from "../pageComponents/PageLayout";
 import { useRouter } from "next/navigation";
+import { medications } from "../medicationsData/medicationData";
 
 const { Title } = Typography;
-const MedicationComparePage = () => {
+
+const MedicationsInThisCategory = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const medicineName: any = searchParams.get("medicine");
-  const genericNameFromQueryParam = medicineName.split(" (")[0];
-  const similarMedications = medications.filter(
-    (medication) => medication.generic_name === genericNameFromQueryParam
-  );
+  const categoryName: any = searchParams.get("category");
+
+  const firstEightMedications = medications.slice(0, 8);
   const columns = [
+    { title: "Generic Name", dataIndex: "generic_name", key: "generic_name" },
     {
       title: "Brand Name",
       dataIndex: "brand_name",
@@ -61,29 +61,31 @@ const MedicationComparePage = () => {
       ),
     },
   ];
+
   return (
-    <PageLayout>
-      <div
-        style={{
-          width: "70%",
-          display: "flex",
-          flexDirection: "column",
-          height: "100vh",
-        }}
-      >
-        <Space direction="vertical" size="middle">
-          <Title level={1}>{genericNameFromQueryParam}</Title>
-          <Table
-            dataSource={similarMedications}
-            columns={columns}
-            rowKey="brand_name"
-            rowClassName={() => "table-row-hover"}
-            bordered
-          />
-        </Space>
-      </div>
-    </PageLayout>
+    <>
+      <PageLayout>
+        <div
+          style={{
+            width: "70%",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <Space direction="vertical" size="middle">
+            <Title level={1}>{categoryName}</Title>
+            <Table
+              dataSource={firstEightMedications}
+              columns={columns}
+              rowKey="brand_name"
+              rowClassName={() => "table-row-hover"}
+              bordered
+            />
+          </Space>
+        </div>
+      </PageLayout>
+    </>
   );
 };
 
-export default MedicationComparePage;
+export default MedicationsInThisCategory;

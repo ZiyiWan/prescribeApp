@@ -27,6 +27,22 @@ const categories = [
       "Medications for high blood pressure, heart disease and stroke prevention.",
     src: "/blood_pressure.png",
   },
+  {
+    title: "Pain",
+    description: "Pain relief for muscle, joint and so on.",
+    src: "/pain.png",
+  },
+  {
+    title: "Diabetes",
+    description: "Medications for the management of blood sugar control.",
+    src: "/diabetes.png",
+  },
+  {
+    title: "Infection",
+    description:
+      "Medications and treatments for bacterial, viral, and fungal infections.",
+    src: "/infection.png",
+  },
 ];
 
 const CategoryList: React.FC = () => (
@@ -41,6 +57,9 @@ const CategoryList: React.FC = () => (
             background: "#f3fafb",
           }}
           hoverable={true}
+          onClick={() => {
+            window.location.href = `/selectedByCategory?category=${category.title}`;
+          }}
         >
           <Row align="middle">
             <Col span={14}>
@@ -95,8 +114,6 @@ const PrescribePage = () => {
   };
 
   const handleSelect = (value: any) => {
-    console.log(value);
-    // Redirect to the new prescribing page, with the selected value as a query parameter
     window.location.href = `/medicationCompare?medicine=${value}`;
   };
 
@@ -126,7 +143,6 @@ const PrescribePage = () => {
         <Title type="secondary" style={{ color: "dodgerblue" }}>
           Or Choose a Category
         </Title>
-        <CategoryList />
         <CategoryList />
       </PageLayout>
     </div>

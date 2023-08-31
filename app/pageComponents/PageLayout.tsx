@@ -11,7 +11,7 @@ const { Title } = Typography;
 
 const PageLayout = ({ children }: Props) => {
   return (
-    <Layout>
+    <Layout style={{ height: "100%" }}>
       <Header
         style={{
           top: 0,
