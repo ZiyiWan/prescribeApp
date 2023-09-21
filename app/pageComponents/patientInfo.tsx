@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Row, Col, Card, Avatar } from "antd";
+import { Typography, Row, Col, Card, Avatar, Badge } from "antd";
 
 const { Text } = Typography;
 
@@ -62,8 +62,9 @@ const PatientInfo: React.FC<PatientInfoProps> = ({ patient, avatarUrl }) => {
             <Col span={8}>
               <Text strong underline>
                 Allergy Intolerance:
-              </Text>{" "}
-              Penicillin
+              </Text>
+              {"    "}
+              <Badge color="red" text="Penicillin" />
             </Col>
           </Row>
         </Col>
