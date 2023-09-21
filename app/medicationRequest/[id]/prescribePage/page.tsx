@@ -1,10 +1,12 @@
 "use client";
+import PageLayout from "@/app/pageComponents/PageLayout";
 import { SearchOutlined } from "@ant-design/icons";
 import { Row, Col, Input, Typography, Card, Image, AutoComplete } from "antd";
 import React from "react";
-import PageLayout from "../pageComponents/PageLayout";
-import { medications } from "../medicationsData/medicationData";
-
+import { patientData } from "@/app/data/patientData";
+import { medications } from "../../../data/medicationData";
+import { usePathname } from "next/navigation";
+import PatientInfo from "@/app/pageComponents/patientInfo";
 const { Title } = Typography;
 const { Meta } = Card;
 
@@ -85,7 +87,8 @@ const CategoryList: React.FC = () => (
 
 const PrescribePage = () => {
   const [options, setOptions] = React.useState([]);
-
+  const patientId = usePathname().split("/")[2];
+  const patient: any = patientData.find((pt) => pt.id === patientId);
   const handleSearch = (value: any) => {
     if (value) {
       const searchResults: any = medications
@@ -114,12 +117,13 @@ const PrescribePage = () => {
   };
 
   const handleSelect = (value: any) => {
-    window.location.href = `/medicationCompare?medicine=${value}`;
+    window.location.href = `./medicationCompare?medicine=${value}`;
   };
 
   return (
     <div style={{ width: "100%", justifyContent: "center" }}>
       <PageLayout>
+        <PatientInfo patient={patient} />
         <Row justify="space-between">
           <Col>
             <Title type="secondary" style={{ color: "dodgerblue" }}>

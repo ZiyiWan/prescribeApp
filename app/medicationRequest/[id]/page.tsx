@@ -1,10 +1,11 @@
 "use client";
 import PageLayout from "@/app/pageComponents/PageLayout";
 import React from "react";
-import { Button, Descriptions, Table } from "antd";
+import { Button, Descriptions, Table, Badge } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { FormOutlined } from "@ant-design/icons";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const columns: ColumnsType<any> = [
   {
@@ -47,6 +48,8 @@ const data = [
 
 const MedicationRequestPage = () => {
   const router = useRouter();
+  const pathname = usePathname();
+
   return (
     <PageLayout>
       <Button
@@ -55,7 +58,7 @@ const MedicationRequestPage = () => {
         style={{ backgroundColor: "#60DF46", marginTop: "10px" }}
         icon={<FormOutlined />}
         onClick={() => {
-          router.push("/prescribePage");
+          router.push(`./${pathname.split("/")[2]}/prescribePage/`);
         }}
       >
         Prescribe
@@ -71,7 +74,7 @@ const MedicationRequestPage = () => {
           background: "white",
         }}
       >
-        <Descriptions title="Patient Info" column={4} layout="vertical">
+        <Descriptions title="Patient Info" column={2} bordered>
           <Descriptions.Item label="ID">7030827</Descriptions.Item>
           <Descriptions.Item label="Name">
             Mrs. Annamaria402 Schowalter414
@@ -86,13 +89,27 @@ const MedicationRequestPage = () => {
             571 Mills Junction, 84044 Salt Lake City, Utah
           </Descriptions.Item>
           <Descriptions.Item label="Contact Info">
-            Phone: 555-689-5221
+            555-689-5221
           </Descriptions.Item>
         </Descriptions>
       </div>
       <div
         style={{
-          marginTop: "35px",
+          marginTop: "15px",
+          flexDirection: "column",
+          justifyContent: "center",
+          height: "10%", // You can adjust this as needed
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+          padding: "20px",
+          background: "white",
+        }}
+      >
+        <h3>Allergy Intolerance</h3>
+        <Badge color="red" text="Penicillin" />
+      </div>
+      <div
+        style={{
+          marginTop: "15px",
           flexDirection: "column",
           justifyContent: "center",
           height: "42%",

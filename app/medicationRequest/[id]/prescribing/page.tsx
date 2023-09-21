@@ -1,7 +1,7 @@
 "use client";
-import { useSearchParams } from "next/navigation";
-import React, { useState } from "react";
-import PageLayout from "../pageComponents/PageLayout";
+import { useSearchParams, usePathname } from "next/navigation";
+import React from "react";
+import PageLayout from "../../../pageComponents/PageLayout";
 import {
   Button,
   Form,
@@ -13,6 +13,8 @@ import {
   Col,
   Typography,
 } from "antd";
+import { patientData } from "@/app/data/patientData";
+import PatientInfo from "@/app/pageComponents/patientInfo";
 
 interface Prescription {
   dose: string;
@@ -27,7 +29,8 @@ const PrescribingPage: React.FC = () => {
   const search = searchParams.get("medicine");
   const [isModalVisible, setIsModalVisible] = React.useState(false);
   const [formData, setFormData] = React.useState<any>(null);
-
+  const patientId = usePathname().split("/")[2];
+  const patient: any = patientData.find((pt) => pt.id === patientId);
   const onFinish = (values: any) => {
     setFormData(values);
     setIsModalVisible(true);
@@ -39,6 +42,7 @@ const PrescribingPage: React.FC = () => {
 
   return (
     <PageLayout>
+      <PatientInfo patient={patient} />
       <Row justify="center">
         <Col span={18}>
           <Title level={2} style={{ textAlign: "center" }}>
@@ -272,7 +276,7 @@ const PrescribingPage: React.FC = () => {
 
             <Form.Item style={{ textAlign: "center", marginTop: "20px" }}>
               <Button type="primary" htmlType="submit">
-                Submit
+                Create
               </Button>
             </Form.Item>
           </Form>

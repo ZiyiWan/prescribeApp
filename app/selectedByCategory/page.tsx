@@ -4,7 +4,7 @@ import { Table, Typography, Space, Button } from "antd";
 import { useSearchParams } from "next/navigation";
 import PageLayout from "../pageComponents/PageLayout";
 import { useRouter } from "next/navigation";
-import { medications } from "../medicationsData/medicationData";
+import { medications } from "../data/medicationData";
 
 const { Title } = Typography;
 
@@ -37,6 +37,26 @@ const MedicationsInThisCategory = () => {
       title: "Carbon Footprint",
       dataIndex: "carbon_footprint_rating",
       key: "carbon_footprint_rating",
+      render: (value: number) => {
+        let color;
+        switch (value) {
+          case 0:
+            color = "green";
+            break;
+          case 1:
+            color = "blue";
+            break;
+          case 2:
+            color = "goldenrod";
+            break;
+          case 3:
+            color = "red";
+            break;
+          default:
+            color = "black";
+        }
+        return <span style={{ color, fontWeight: "bolder" }}>{value}</span>;
+      },
     },
     {
       title: "Cost per Unit Dose",

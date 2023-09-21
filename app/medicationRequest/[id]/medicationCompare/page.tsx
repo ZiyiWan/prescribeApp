@@ -1,10 +1,13 @@
 "use client";
 import React from "react";
 import { Table, Typography, Space, Button } from "antd";
-import { medications } from "../medicationsData/medicationData";
+import { medications } from "../../../data/medicationData";
 import { useSearchParams } from "next/navigation";
-import PageLayout from "../pageComponents/PageLayout";
+import PageLayout from "../../../pageComponents/PageLayout";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { patientData } from "@/app/data/patientData";
+import PatientInfo from "@/app/pageComponents/patientInfo";
 
 const { Title } = Typography;
 const MedicationComparePage = () => {
@@ -15,6 +18,8 @@ const MedicationComparePage = () => {
   const similarMedications = medications.filter(
     (medication) => medication.generic_name === genericNameFromQueryParam
   );
+  const patientId = usePathname().split("/")[2];
+  const patient: any = patientData.find((pt) => pt.id === patientId);
   const columns = [
     {
       title: "Brand Name",
@@ -37,6 +42,26 @@ const MedicationComparePage = () => {
       title: "Carbon Footprint",
       dataIndex: "carbon_footprint_rating",
       key: "carbon_footprint_rating",
+      render: (value: number) => {
+        let color;
+        switch (value) {
+          case 0:
+            color = "green";
+            break;
+          case 1:
+            color = "blue";
+            break;
+          case 2:
+            color = "goldenrod";
+            break;
+          case 3:
+            color = "red";
+            break;
+          default:
+            color = "black";
+        }
+        return <span style={{ color, fontWeight: "bolder" }}>{value}</span>;
+      },
     },
     {
       title: "Cost per Unit Dose",
@@ -51,7 +76,7 @@ const MedicationComparePage = () => {
         <Button
           onClick={() =>
             router.push(
-              `/prescribing?medicine=${record.generic_name}(${record.brand_name})`
+              `./prescribing?medicine=${record.generic_name}(${record.brand_name})`
             )
           }
           type="link"
@@ -63,6 +88,7 @@ const MedicationComparePage = () => {
   ];
   return (
     <PageLayout>
+      <PatientInfo patient={patient} />
       <div
         style={{
           width: "70%",
