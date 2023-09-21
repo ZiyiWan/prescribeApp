@@ -2,9 +2,11 @@
 import React, { useEffect } from "react";
 import { Table, Typography, Space, Button } from "antd";
 import { useSearchParams } from "next/navigation";
-import PageLayout from "../pageComponents/PageLayout";
-import { useRouter } from "next/navigation";
-import { medications } from "../data/medicationData";
+import PageLayout from "../../../pageComponents/PageLayout";
+import { useRouter, usePathname } from "next/navigation";
+import { medications } from "../../../data/medicationData";
+import { patientData } from "@/app/data/patientData";
+import PatientInfo from "@/app/pageComponents/patientInfo";
 
 const { Title } = Typography;
 
@@ -12,7 +14,8 @@ const MedicationsInThisCategory = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const categoryName: any = searchParams.get("category");
-
+  const patientId = usePathname().split("/")[2];
+  const patient: any = patientData.find((pt) => pt.id === patientId);
   const firstEightMedications = medications.slice(0, 8);
   const columns = [
     { title: "Generic Name", dataIndex: "generic_name", key: "generic_name" },
@@ -71,7 +74,7 @@ const MedicationsInThisCategory = () => {
         <Button
           onClick={() =>
             router.push(
-              `/prescribing?medicine=${record.generic_name}(${record.brand_name})`
+              `./prescribing?medicine=${record.generic_name}(${record.brand_name})`
             )
           }
           type="link"
@@ -85,6 +88,7 @@ const MedicationsInThisCategory = () => {
   return (
     <>
       <PageLayout>
+        <PatientInfo patient={patient} />
         <div
           style={{
             width: "70%",

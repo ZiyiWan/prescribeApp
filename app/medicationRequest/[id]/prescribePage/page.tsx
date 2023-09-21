@@ -60,7 +60,7 @@ const CategoryList: React.FC = () => (
           }}
           hoverable={true}
           onClick={() => {
-            window.location.href = `/selectedByCategory?category=${category.title}`;
+            window.location.href = `./selectedByCategory?category=${category.title}`;
           }}
         >
           <Row align="middle">
